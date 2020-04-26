@@ -11,3 +11,5 @@ parameters:
 steps:
   - greet:
       greeting: << parameters.greeting >>
+  - checkov:
+      path: '/src'

@@ -1,0 +1,12 @@
+# How to author commands: https://circleci.com/docs/2.0/reusing-config/#authoring-reusable-commands
+description: >
+  run checkov scan on directory
+parameters:
+  path:
+    type: string
+    default: "."
+    description: "path to run checkov"
+steps:
+  - run:
+      name: Checkov
+      command: checkov parameters.greeting
