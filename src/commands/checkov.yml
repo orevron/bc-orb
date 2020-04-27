@@ -2,16 +2,36 @@
 description: >
   run checkov scan on directory
 parameters:
-  path:
+  directory:
     type: string
     default: "."
-    description: "path to run checkov"
-  output:
+    description: "IaC root directory"
+  file:
     type: string
+    default: "main.tf"
+    description: "IaC file"
+  output:
+    type: enum
+    enum: ["json", "cli", "junitxml"]
     default: "cli"
-    description: "output convention"
+    description: "Report output format"
+  suppress:
+    type: boolean
+    default: false
+    description: "Runs checks but suppresses error code"
+
+
 
 steps:
   - run:
       name: Checkov
-      command: checkov -o << parameters.output >> -d << parameters.path >>
+      command: |
+        SUPPRESS=<<parameters.suppress>>
+        OUTPUT=<<parameters.output>>
+        DIRECTORY=<<parameters.directory>>
+        FILE=<<parameters.file>>
+        echo $SUPPRESS
+        echo $OUTPUT
+        echo $DIRECTORY
+        echo $FILE
+#        checkov -s << parameters.suppress >> -o << parameters.output >> -d << parameters.directory >>

@@ -9,8 +9,6 @@ parameters:
     default: "Hello"
     description: "Select a proper greeting"
 steps:
-  - greet:
-      greeting: << parameters.greeting >>
   - install
   - checkov:
       path: '/src'

@@ -18,11 +18,11 @@ jobs:
     executor: default
     steps:
       - checkout
-      - bc-orb/greet:
-          greeting: "allahu akbar"
-      - bc-orb/install
       - bc-orb/checkov:
-          path: "."
+          directory: "."
+          file: "kisi.tf"
+          suppress: true
+          output: "json"
 workflows:
   lint_pack-validate_publish-dev:
     unless: << pipeline.parameters.run-integration-tests >>
