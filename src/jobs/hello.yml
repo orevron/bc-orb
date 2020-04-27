@@ -1,9 +1,0 @@
-description: >
-  # What will this job do?
-  # Descriptions should be short, simple, and clear.
-  Sample description
-executor: default
-steps:
-  - install
-  - checkov
-

@@ -1,4 +1,4 @@
-description: >
+description: |
   Run Bridgecrew scan
 parameters:
   directory:

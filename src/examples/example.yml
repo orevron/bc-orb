@@ -1,14 +1,14 @@
-description: >
-  Sample example description.
-  # What will this example document?
-  # Descriptions should be short, simple, and clear.
+description: |
+  scan repository with checkov to find security vonerabilities in your IaC files
 usage:
   version: 2.1
   orbs:
-    foo: bar/foo@1.2.3
+    bc-orb: evrons/bc-orb@3.1.1
   jobs:
     build:
       machine: true
       steps:
-        - foo/hello:
-            username: "Anna"
+        - bc-orb/scan:
+            directory: "."
+            suppress: true
+            output: "json"
