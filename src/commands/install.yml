@@ -1,0 +1,7 @@
+# How to author commands: https://circleci.com/docs/2.0/reusing-config/#authoring-reusable-commands
+description: >
+  run checkov scan on directory
+steps:
+  - run:
+      name: install checkov
+      command: pip install checkov
