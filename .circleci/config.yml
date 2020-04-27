@@ -22,6 +22,7 @@ jobs:
           output: "json"
           directory: "."
           suppress: true
+          file: "kisi.tf"
 workflows:
   lint_pack-validate_publish-dev:
     unless: << pipeline.parameters.run-integration-tests >>
