@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  bc-orb: evrons/bc-orb@0.0.2
+  bc-orb: evrons/bc-orb@<<pipeline.parameters.dev-orb-version>>
   orb-tools: circleci/orb-tools@9.0
 parameters:
   run-integration-tests:
