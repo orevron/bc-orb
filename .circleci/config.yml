@@ -21,8 +21,8 @@ jobs:
       - bc-orb/checkov:
           directory: "."
           file: "kisi.tf"
-          suppress: true
           output: "json"
+          suppress: true
 workflows:
   lint_pack-validate_publish-dev:
     unless: << pipeline.parameters.run-integration-tests >>
