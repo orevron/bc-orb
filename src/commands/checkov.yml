@@ -4,9 +4,11 @@ description: >
 parameters:
   directory:
     type: string
+    default: "none"
     description: "IaC root directory"
   file:
     type: string
+    default: "none"
     description: "IaC file"
   output:
     type: enum

@@ -5,7 +5,5 @@ description: >
 executor: default
 steps:
   - install
-  - checkov:
-      file: "kisi.tf"
-      directory: "."
+  - checkov
 
