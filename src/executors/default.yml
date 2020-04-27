@@ -4,4 +4,4 @@ description: >
   # What is this executor?
   # Descriptions should be short, simple, and clear.
 docker:
-  - image: 'python'
+  - image: 'orevron/checkov-docker:latest'
