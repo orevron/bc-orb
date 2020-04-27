@@ -53,4 +53,4 @@ steps:
         if [ $API_KEY != $NONE ]; then
           CMD_STR=$CMD_STR"-kisi $API_KEY "
         fi
-        echo $CMD_STR
+        echo $CMD_STR | sh
