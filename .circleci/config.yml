@@ -22,7 +22,7 @@ jobs:
           greeting: "allahu akbar"
       - bc-orb/install
       - bc-orb/checkov:
-          path: "/src"
+          path: "."
 workflows:
   lint_pack-validate_publish-dev:
     unless: << pipeline.parameters.run-integration-tests >>
