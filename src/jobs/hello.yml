@@ -11,5 +11,6 @@ parameters:
 steps:
   - greet:
       greeting: << parameters.greeting >>
+  - install
   - checkov:
       path: '/src'
