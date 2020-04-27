@@ -24,7 +24,7 @@ parameters:
     default: "none"
 steps:
   - run:
-      name: Scan
+      name: scan
       command: |
         NONE=none
         SUPPRESS=<<parameters.suppress>>
