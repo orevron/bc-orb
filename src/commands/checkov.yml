@@ -4,11 +4,9 @@ description: >
 parameters:
   directory:
     type: string
-    default: "."
     description: "IaC root directory"
   file:
     type: string
-    default: "main.tf"
     description: "IaC file"
   output:
     type: enum
@@ -27,8 +25,8 @@ steps:
         OUTPUT=<<parameters.output>>
         DIRECTORY=<<parameters.directory>>
         FILE=<<parameters.file>>
-        echo $SUPPRESS
-        echo $OUTPUT
-        echo $DIRECTORY
-        echo $FILE
+        echo SUPPRESS=$SUPPRESS
+        echo OUTPUT=$OUTPUT
+        echo DIRECTORY=$DIRECTORY
+        echo FILE=$FILE
 #        checkov -s << parameters.suppress >> -o << parameters.output >> -d << parameters.directory >>

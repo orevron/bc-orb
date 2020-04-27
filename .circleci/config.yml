@@ -20,6 +20,8 @@ jobs:
       - checkout
       - bc-orb/checkov:
           output: "json"
+          directory: "."
+          suppress: true
 workflows:
   lint_pack-validate_publish-dev:
     unless: << pipeline.parameters.run-integration-tests >>
