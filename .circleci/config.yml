@@ -9,12 +9,13 @@ parameters:
   dev-orb-version:
     type: string
     default: "dev:alpha"
-
+executors:
+  default:
+    docker:
+      - image: python
 jobs:
   integration-test-1:
-    executor:
-      docker:
-        - image: 'python'
+    executor: default
     steps:
       - checkout
       - bc-orb/greet:
