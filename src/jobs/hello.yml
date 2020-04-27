@@ -6,4 +6,4 @@ executor: default
 steps:
   - install
   - checkov:
-      path: '/src'
+      otuput: "json"
