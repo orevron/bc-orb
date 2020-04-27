@@ -2,23 +2,23 @@
 description: >
   run checkov scan on directory
 parameters:
-  directory:
-    type: string
-    default: "."
-    description: "IaC root directory"
-  file:
-    type: string
-    default: "main.tf"
-    description: "IaC file"
-  output:
-    type: enum
-    enum: ["json", "cli", "junitxml"]
-    default: "cli"
-    description: "Report output format"
-  suppress:
-    type: boolean
-    default: false
-    description: "Runs checks but suppresses error code"
+  - directory:
+      type: string
+      default: "."
+      description: "IaC root directory"
+  - file:
+      type: string
+      default: "main.tf"
+      description: "IaC file"
+  - output:
+      type: enum
+      enum: ["json", "cli", "junitxml"]
+      default: "cli"
+      description: "Report output format"
+  - suppress:
+      type: boolean
+      default: false
+      description: "Runs checks but suppresses error code"
 
 
 
