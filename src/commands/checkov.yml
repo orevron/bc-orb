@@ -9,4 +9,4 @@ parameters:
 steps:
   - run:
       name: Checkov
-      command: checkov parameters.path
+      command: checkov << parameters.path >>
