@@ -6,7 +6,11 @@ parameters:
     type: string
     default: "."
     description: "path to run checkov"
+  output:
+    type: string
+    default: "cli"
+
 steps:
   - run:
       name: Checkov
-      command: checkov -d << parameters.path >>
+      command: checkov -o << parameters.output >> -d << parameters.path >>
