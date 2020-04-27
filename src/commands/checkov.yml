@@ -23,12 +23,27 @@ steps:
   - run:
       name: Checkov
       command: |
+        NONE=none
         SUPPRESS=<<parameters.suppress>>
         OUTPUT=<<parameters.output>>
         DIRECTORY=<<parameters.directory>>
         FILE=<<parameters.file>>
-        echo SUPPRESS=$SUPPRESS
-        echo OUTPUT=$OUTPUT
-        echo DIRECTORY=$DIRECTORY
-        echo FILE=$FILE
-#        checkov -s << parameters.suppress >> -o << parameters.output >> -d << parameters.directory >>
+        CND_STR="checkov -o $OUTPUT "
+        if [ $FILE == $NONE ] && [ $DIRECTORY == $NONE ];
+        then
+          echo "file or directory must be provided"
+          exit 1
+        elif [ $FILE != $NONE ] && [ $DIRECTORY != $NONE ];
+          echo "cannot provide file and directory, chose only one"
+          exit 1
+        elif [ $SUPPRESS == "true" ];
+        then
+          CMD_STR=$CND_STR"-s "
+        elif [ $FILE != $NONE ];
+        then
+          CMD_STR=$CND_STR"-f $FILE "
+        elif [ $DIRECTORY != $NONE ];
+        then
+          CMD_STR=$CND_STR"-d DIRECTORY "
+        fi
+        echo $CMD_STR
