@@ -3,5 +3,5 @@ description: >
   run checkov scan on directory
 steps:
   - run:
-      name: install checkov
+      name: Install Checkov
       command: pip install checkov
