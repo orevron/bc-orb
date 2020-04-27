@@ -12,7 +12,9 @@ parameters:
 
 jobs:
   integration-test-1:
-    executor: default
+    executor:
+      docker:
+        - image: 'python'
     steps:
       - checkout
       - bc-orb/greet:
